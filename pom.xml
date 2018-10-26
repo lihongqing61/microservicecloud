@@ -81,6 +81,7 @@
     <finalName>microservicecloud</finalName>
     <resources>
       <resource>
+        <!-- 读取 src/main/resources文件下 以$开头和以$结尾的内容 则可以读取 -->
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
       </resource>

@@ -85,5 +85,33 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
+
+    <!-- actuator信息完善 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
   </dependencies>
+
+  <build>
+    <finalName>microservicecloud</finalName>
+    <resources>
+      <resource>
+        <!-- 读取 src/main/resources文件下 以$开头和以$结尾的内容 则可以读取 -->
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <delimiters>
+            <delimit>$</delimit>
+          </delimiters>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
